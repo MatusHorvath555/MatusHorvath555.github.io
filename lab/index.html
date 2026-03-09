@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>document.documentElement.classList.add('js');</script>
+  <title>UI Motion Lab • Matúš Horváth</title>
+  <link rel="stylesheet" href="./lab.css" />
+</head>
+<body>
+
+  <!-- ANIMATED BACKGROUND MESH -->
+  <div class="mesh" aria-hidden="true">
+    <div class="mesh__blob mesh__blob--1"></div>
+    <div class="mesh__blob mesh__blob--2"></div>
+    <div class="mesh__blob mesh__blob--3"></div>
+  </div>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a class="brand" href="../sk/">← Matúš Horváth</a>
+    <nav class="topnav">
+      <a class="topnav__link" href="../sk/">CV</a>
+      <a class="topnav__link topnav__link--active" href="./" aria-current="page">UI Lab</a>
+      <a class="topnav__link" href="https://github.com/MatusHorvath555" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+      <span class="theme-btn__icon" id="themeIcon">🌙</span>
+    </button>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+      <div class="hero__tag" data-reveal>
+        <span class="dot"></span> UI Motion Lab
+      </div>
+      <h1 class="hero__title" data-reveal>
+        Motion that<br/>
+        <span class="hero__gradient">feels alive.</span>
+      </h1>
+      <p class="hero__sub" data-reveal>
+        Micro-interactions, transitions and component polish —<br/>
+        built with pure HTML, CSS and a touch of JavaScript.
+      </p>
+      <div class="hero__btns" data-reveal>
+        <a class="cta-btn cta-btn--primary" href="#interactions">Explore ↓</a>
+        <a class="cta-btn cta-btn--ghost" href="../sk/">View CV</a>
+      </div>
+
+      <!-- floating chips -->
+      <div class="hero__chips" data-reveal>
+        <span class="chip chip--pink">Hover lift</span>
+        <span class="chip chip--blue">Blur reveal</span>
+        <span class="chip chip--green">Sheen</span>
+        <span class="chip chip--purple">Typewriter</span>
+        <span class="chip chip--orange">Theme toggle</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PRINCIPLES (sticky scroll story) ═══════════════ -->
+    <section class="principles" id="principles">
+      <div class="principles__sticky" data-reveal>
+        <div class="principles__glass">
+          <p class="label">Motion principles</p>
+          <h2 class="principles__title" id="princTitle">Motion guides attention.</h2>
+          <p class="principles__text" id="princText">
+            Great UI motion feels instant, purposeful and never decorative.
+            It answers: where am I, what changed, what can I do.
+          </p>
+
+          <!-- animated progress bar -->
+          <div class="prog" aria-hidden="true">
+            <div class="prog__fill" id="progFill"></div>
+          </div>
+
+          <div class="principles__row">
+            <div class="principles__kv">
+              <span class="kv-label">Duration</span>
+              <span class="kv-val" id="princDuration">160 – 320 ms</span>
+            </div>
+            <div class="principles__kv">
+              <span class="kv-label">Easing</span>
+              <span class="kv-val" id="princEase">cubic-bezier(0.22,1,0.36,1)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- scroll steps -->
+      <div class="principles__steps" aria-hidden="true">
+        <div class="step-block" data-step="0">
+          <div class="step-card step-card--blue">
+            <span>Guide</span>
+          </div>
+        </div>
+        <div class="step-block" data-step="1">
+          <div class="step-card step-card--purple">
+            <span>Depth</span>
+          </div>
+        </div>
+        <div class="step-block" data-step="2">
+          <div class="step-card step-card--green">
+            <span>Respect</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ INTERACTION GALLERY ═══════════════ -->
+    <section class="section" id="interactions" data-reveal>
+      <div class="section__header">
+        <p class="label">Gallery</p>
+        <h2 class="h2">Interaction gallery</h2>
+        <p class="sub muted">Hover, focus or click each card to see it live.</p>
+      </div>
+
+      <div class="igrid">
+
+        <!-- 1. Hover lift + glow -->
+        <article class="icard icard--lift" tabindex="0">
+          <div class="icard__badge badge--blue">Hover</div>
+          <h3 class="icard__title">Lift + Glow</h3>
+          <p class="icard__text muted">Card rises with shadow and a soft accent glow on the border.</p>
+          <div class="icard__demo">
+            <div class="demo-lift-box">Hover me</div>
+          </div>
+        </article>
+
+        <!-- 2. Sheen -->
+        <article class="icard icard--sheen" tabindex="0">
+          <div class="icard__badge badge--purple">Hover</div>
+          <h3 class="icard__title">Sheen highlight</h3>
+          <p class="icard__text muted">A soft light sweep for premium material feel.</p>
+          <div class="icard__demo">
+            <div class="demo-sheen-box">Hover me</div>
+          </div>
+        </article>
+
+        <!-- 3. Typewriter -->
+        <article class="icard" tabindex="0">
+          <div class="icard__badge badge--green">Auto</div>
+          <h3 class="icard__title">Typewriter</h3>
+          <p class="icard__text muted">Text appears character by character with a blinking caret.</p>
+          <div class="icard__demo">
+            <span class="demo-type" id="typeTarget"></span>
+          </div>
+        </article>
+
+        <!-- 4. Button press -->
+        <article class="icard" tabindex="0">
+          <div class="icard__badge badge--orange">Click</div>
+          <h3 class="icard__title">Press feedback</h3>
+          <p class="icard__text muted">Instant scale-down confirms the click.</p>
+          <div class="icard__demo icard__demo--row">
+            <button class="press-btn press-btn--primary" type="button" id="toastBtn">Primary</button>
+            <button class="press-btn press-btn--ghost" type="button">Ghost</button>
+            <button class="press-btn press-btn--danger" type="button">Danger</button>
+          </div>
+        </article>
+
+        <!-- 5. Underline grow -->
+        <article class="icard" tabindex="0">
+          <div class="icard__badge badge--pink">Hover</div>
+          <h3 class="icard__title">Underline grow</h3>
+          <p class="icard__text muted">Link underline expands from left on hover/focus.</p>
+          <div class="icard__demo">
+            <a class="u-link" href="#interactions">Hover this link →</a>
+          </div>
+        </article>
+
+        <!-- 6. Count-up -->
+        <article class="icard" tabindex="0" id="countCard">
+          <div class="icard__badge badge--blue">Scroll</div>
+          <h3 class="icard__title">Count-up numbers</h3>
+          <p class="icard__text muted">Numbers animate in when entering the viewport.</p>
+          <div class="icard__demo icard__demo--row">
+            <div class="stat">
+              <span class="stat__num" data-target="99">0</span>
+              <span class="stat__label">CSS only</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-target="12">0</span>
+              <span class="stat__label">Components</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-target="0">0</span>
+              <span class="stat__label">Libraries</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ COLOR TOKENS ═══════════════ -->
+    <section class="section" data-reveal>
+      <div class="section__header">
+        <p class="label">Design tokens</p>
+        <h2 class="h2">Color & motion system</h2>
+      </div>
+
+      <div class="token-grid">
+        <div class="token-card" style="--c: var(--c-pink)">
+          <div class="token-swatch"></div>
+          <div class="token-info">
+            <span class="token-name">Pink</span>
+            <span class="token-hex">#f472b6</span>
+          </div>
+        </div>
+        <div class="token-card" style="--c: var(--c-blue)">
+          <div class="token-swatch"></div>
+          <div class="token-info">
+            <span class="token-name">Blue</span>
+            <span class="token-hex">#60a5fa</span>
+          </div>
+        </div>
+        <div class="token-card" style="--c: var(--c-purple)">
+          <div class="token-swatch"></div>
+          <div class="token-info">
+            <span class="token-name">Purple</span>
+            <span class="token-hex">#a78bfa</span>
+          </div>
+        </div>
+        <div class="token-card" style="--c: var(--c-green)">
+          <div class="token-swatch"></div>
+          <div class="token-info">
+            <span class="token-name">Green</span>
+            <span class="token-hex">#34d399</span>
+          </div>
+        </div>
+        <div class="token-card" style="--c: var(--c-orange)">
+          <div class="token-swatch"></div>
+          <div class="token-info">
+            <span class="token-name">Orange</span>
+            <span class="token-hex">#fb923c</span>
+          </div>
+        </div>
+        <div class="token-card" style="--c: var(--accent)">
+          <div class="token-swatch"></div>
+          <div class="token-info">
+            <span class="token-name">Teal</span>
+            <span class="token-hex">#0ea5a4</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- motion easing curves (visual) -->
+      <div class="easing-grid">
+        <div class="easing-card">
+          <div class="easing-demo easing-demo--spring" id="easeSpring">
+            <div class="easing-ball"></div>
+          </div>
+          <p class="easing-label">spring</p>
+          <code class="easing-code">cubic-bezier(0.22,1,0.36,1)</code>
+        </div>
+        <div class="easing-card">
+          <div class="easing-demo easing-demo--ease" id="easeEase">
+            <div class="easing-ball"></div>
+          </div>
+          <p class="easing-label">ease-out</p>
+          <code class="easing-code">cubic-bezier(0,0,0.2,1)</code>
+        </div>
+        <div class="easing-card">
+          <div class="easing-demo easing-demo--linear" id="easeLinear">
+            <div class="easing-ball"></div>
+          </div>
+          <p class="easing-label">linear</p>
+          <code class="easing-code">linear</code>
+        </div>
+      </div>
+
+      <p class="easing-hint muted">Click a card to replay animation →</p>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="lab-footer" data-reveal>
+      <p class="lab-footer__text muted">
+        Built with HTML / CSS / JS — zero libraries.<br/>
+        Motion respects <code>prefers-reduced-motion</code>.
+      </p>
+      <a class="u-link" href="../sk/">← Back to CV</a>
+    </footer>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./lab.js" defer></script>
+</body>
+</html>

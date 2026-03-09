@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matúš Horváth • CV</title>
+  <meta name="description" content="CV / Portfolio — Matúš Horváth. Frontend focus (HTML/CSS), CS50 in progress." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <main class="page">
+    <!-- HEADER -->
+    <header class="header" data-reveal>
+      <h1 class="name">Matúš Horváth</h1>
+      <p class="role">Junior IT / Frontend (HTML & CSS) • Applied Informatics student</p>
+
+      <div class="meta">
+        <a id="emailLink" href="mailto:horvathmatus555@gmail.com">horvathmatus555@gmail.com</a>
+        <button class="copy" type="button" id="copyEmailBtn" aria-label="Copy email">Copy</button>
+
+        <span class="sep">|</span>
+        <a href="https://github.com/MatusHorvath555" target="_blank" rel="noreferrer">github.com/MatusHorvath555</a>
+
+        <span class="sep">|</span>
+        <nav class="lang" aria-label="Language switcher">
+          <a class="lang__link" href="../sk/" lang="sk">SK</a>
+          <a class="lang__link" href="../cz/" lang="cs">CZ</a>
+          <a class="lang__link lang__link--active" href="../en/" lang="en" aria-current="page">EN</a>
+        </nav>
+
+        <span class="sep">|</span>
+<a href="../lab/">UI Lab ↗</a>
+
+<span class="sep">|</span>
+<span class="muted">Senica, Slovensko</span>
+      </div>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- SUMMARY -->
+    <section class="section" id="summary" data-reveal>
+      <h2 class="section__title">Profile Summary</h2>
+      <p class="lead">
+        I am an Applied Informatics student (UCM FPV) with a strong interest in IT and web development.
+        I enjoy building modern, clean UI in <strong>HTML & CSS</strong> the most. From work experience, I bring
+        a performance mindset, consistency, and strong communication. Alongside school, I am currently completing <strong>Harvard CS50</strong>.
+      </p>
+    </section>
+
+    <hr class="rule rule--soft" />
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" data-reveal>
+      <h2 class="section__title">Skills</h2>
+
+      <div class="skills">
+        <div class="skills__row">
+          <div class="skills__label">Technical</div>
+          <div class="skills__value">
+            HTML • CSS • Responsive (Grid/Flex) • Basics of C/C++ • Basics of algorithms (logic, loops, functions, arrays)
+          </div>
+        </div>
+
+        <div class="skills__row">
+          <div class="skills__label">Learning now</div>
+          <div class="skills__value">
+            Harvard CS50 (in progress) • JavaScript (next step) • Animations/UI polish
+          </div>
+        </div>
+
+        <div class="skills__row">
+          <div class="skills__label">Soft skills</div>
+          <div class="skills__value">
+            Communication • Consistency • Goal-oriented work • Customer-facing experience
+          </div>
+        </div>
+
+        <div class="skills__row">
+          <div class="skills__label">Languages</div>
+          <div class="skills__value">
+            English: B2 (cert) • fluent communication • preparing for Cambridge C2 • German: A2
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule rule--soft" />
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" data-reveal>
+      <h2 class="section__title">Work Experience</h2>
+
+      <article class="xp">
+        <div class="xp__top">
+          <div>
+            <h3 class="xp__role">Customer Care Specialist</h3>
+            <p class="xp__company">Partner Telekom Center Senica (Mobile Trade s.r.o.)</p>
+          </div>
+          <div class="xp__date">11/2023 – 02/2026</div>
+        </div>
+
+        <ul class="bullets">
+          <li>Customer support, needs analysis, and solution recommendations.</li>
+          <li>Presentation and active sales of Slovak Telekom products and services.</li>
+          <li><strong>Top performer from month 1</strong> and consistently around <strong>Top ~1%</strong> results.</li>
+          <li>Selected for <strong>Gold Winner Circle 2024</strong> (performance award).</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr class="rule rule--soft" />
+
+    <!-- EDUCATION -->
+    <section class="section" id="education" data-reveal>
+      <h2 class="section__title">Education</h2>
+
+      <div class="edu">
+        <div class="edu__row">
+          <div>
+            <h3 class="edu__title">UCM Trnava (FPV) — Applied Informatics</h3>
+            <p class="muted">Currently: C, C++ (basics) + personal frontend projects</p>
+          </div>
+          <div class="edu__date">10/2025 – present</div>
+        </div>
+
+        <div class="edu__row">
+          <div>
+            <h3 class="edu__title">Private Secondary School of Entrepreneurship, Senica</h3>
+          </div>
+          <div class="edu__date">09/2019 – 09/2023</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule rule--soft" />
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" data-reveal>
+      <h2 class="section__title">Projects (selected)</h2>
+
+      <div class="projects">
+        <div class="project">
+          <div class="project__top">
+            <h3 class="project__title">Minimal CV Website</h3>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <p class="muted">
+            A minimalist CV-style landing page.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project__top">
+            <h3 class="project__title">CSS Components Pack</h3>
+            <span class="tag">UI</span>
+          </div>
+          <p class="muted">
+            A set of components: buttons, cards, typography, spacing system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule rule--soft" />
+
+    <!-- CONTACT -->
+    <section class="section section--last" id="contact" data-reveal>
+      <h2 class="section__title">Contact</h2>
+      <p class="lead">
+ 
+        <a class="accent" href="mailto:horvathmatus555@gmail.com">horvathmatus555@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
